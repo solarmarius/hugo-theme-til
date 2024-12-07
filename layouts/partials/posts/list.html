@@ -17,6 +17,19 @@
               >{{ $dateHuman }}</time
             >
           </header>
+          
+          <div class="text-sm font-bold">
+            {{- if (isset .Params "tags") -}}
+              {{- $tags := .Params.tags -}}
+              {{- if reflect.IsSlice $tags -}}
+                {{- range $tags }}
+                  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                {{- end }}
+              {{- else -}}
+                <a href="{{ "/tags/" | relLangURL }}{{ $tags | urlize }}" class="tag">{{ $tags }}</a>
+              {{- end }}
+            {{- end }}
+          </div>
 
           <div class="text-sm">{{ .Summary }}</div>
         </article>

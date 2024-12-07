@@ -1,13 +1,9 @@
 {{ define "main" }}
   <article class="main">
-    {{- with .Title }}
-      <header>
-        <h1 class="!mb-1">{{ . }}</h1>
-      </header>
-    {{ end -}}
-    {{- with .Content }}
-      {{ . }}
-    {{ end -}}
+    <header>
+      <h1 class="!mb-1">Hey, I'm Marius! 👋</h1>
+    </header>
+    <div>This blog is my little corner of the internet where I dive into the ever-evolving world of artificial intelligence and share the curious, thought-provoking things I stumble upon along the way.</div>
   </article>
 
   {{- if default true site.Params.home.showRecentPosts }}

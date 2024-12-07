@@ -14,6 +14,10 @@
         </div>
       {{- end }}
 
+      {{- with .Params.summary }}
+        <div class="text-sm">{{ . }}</div>
+      {{- end }}
+
       {{- with $imgResources.GetMatch "{*feature*,*cover*}" }}
         <figure class="feature-image !mb-20 block text-center">
           <img
